@@ -18,5 +18,5 @@ echo Time is `date`
 echo Directory is `pwd`
 echo Slurm job ID is $SLURM_JOBID
 
-python nnd.py
+python nnd_final.py
 
