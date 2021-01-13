@@ -10,8 +10,8 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 #parameters
-m_min=10
-data_name1 = "z0m5e11.csv"
+m_min=11.5
+data_name1 = "BigMDPL_Rockstar_z[1]_L[2500]"
 
 data_name_split =data_name1.split('_')
 name = data_name_split[0]
@@ -64,9 +64,10 @@ address = './'+'sim['+data_name1+']_m_min['+str(m_min)+']/';
 
 name_nnd = address + 'NND'+'_'+name+'_'+halo_finder+'_'+redshift+'_sample'+str([m_min])+'.txt'
 name_nnd_r = address + 'NND_R'+'_'+name+'_'+halo_finder+'_'+redshift+'_sample'+str([m_min])+'.txt'
-
-np.savetxt(name_nnd,nnd,header=str(len(data)),comments='')
-np.savetxt(name_nnd_r,nnd_r,header=str(len(data)),comments='')
+column_names_nnd = ['mass','x','y','z','nnd','mass[nn]']
+column_names_nnd_r= ['x[random]','y[random]','z[random]','nnd','mass[nn]']
+np.savetxt(name_nnd,nnd,header=','.join(column_names_nnd),comments='')
+np.savetxt(name_nnd_r,nnd_r,header=','.join(column_names_nnd_r),comments='')
 
 
 
